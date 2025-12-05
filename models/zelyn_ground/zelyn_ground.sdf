@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.4">
+
+<model name="zelyn_ground">
+  <static>true</static>
+  <link name="zelyn_ground_link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>10000 10000 .1</size>
+          </box>
+        </geometry>
+      </collision>
+  <visual name="zelyn_ground_visual1">
+    <pose>0 0 0 0 0 0</pose>
+    <geometry>
+      <plane>
+        <normal>0 0 1</normal>
+        <size>10000 10000</size>
+      </plane>
+      <mesh>
+        <uri>model://zelyn_ground/zelyn_ground.dae</uri>
+        <scale>1 1 1</scale>
+      </mesh>
+    </geometry>
+    <material>
+	      <script>
+          <uri>model://zelyn_ground/materials/scripts</uri>
+          <uri>model://zelyn_ground/materials/textures</uri>
+          <name>vrc/task_map</name>
+        </script>
+    </material>
+  </visual>
+
+  </link>
+</model>
+</sdf>
