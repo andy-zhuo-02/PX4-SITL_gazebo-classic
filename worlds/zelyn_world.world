@@ -53,12 +53,6 @@
       <pose>0 0 0 0 0 0</pose>
     </include>
 
-
-    <include>
-      <uri>model://sonoma_raceway</uri>
-      <pose>-736 -720 -7 0 0 -0.3</pose>
-    </include>
-
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
       <latitude_deg>40.39827777777778</latitude_deg>
@@ -300,29 +294,6 @@
         <kinematic>0</kinematic>
       </link>
       <pose frame=''>161.88 0.82 0 0 -0 3.14</pose>
-    </model>
-    <model name='asphalt_plane_74'>
-      <static>1</static>
-      <pose frame=''>161.581 8.664 0 0 -0 0</pose>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>40 40 0.05</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
     </model>
 
     <model name='fast_food_93'>
@@ -724,12 +695,6 @@
       <pose frame=''>65.739 81.38 0 0 -0 1.57</pose>
     </model>
 
-
-
-
-
-
-
     <model name="ground_plane">
       <static>true</static>
       <link name="link">
@@ -749,9 +714,14 @@
             </friction>
 
         </collision>
+      </link>
+    </model>
 
-        <visual name="runway">
-          <pose>-4014 -4100 0.1 0 0 11.81</pose>
+    <model name='runway_plane'>
+      <static>1</static>
+      <pose frame=''>-4014 -4100 0.1 0 -0 11.81</pose>
+      <link name='link'>
+        <visual name='runway'>
           <cast_shadows>false</cast_shadows>
           <geometry>
             <plane>
@@ -962,29 +932,6 @@
         <kinematic>0</kinematic>
       </link>
       <pose frame=''>-4100.88 -3950.82 0 0 0 0.80</pose>
-    </model>
-    <model name='asphalt_plane_72'>
-      <static>1</static>
-      <pose frame=''>-4100.2 -3959.12 0 0 -0 0.80</pose>
-      <link name='link'>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>40 40 0.05</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
     </model>
 
   </world>

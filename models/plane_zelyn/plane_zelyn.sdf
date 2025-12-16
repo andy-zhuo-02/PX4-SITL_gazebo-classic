@@ -44,7 +44,7 @@
         </geometry>
         <material>
           <script>
-            <name>Gazebo/DarkGrey</name>
+            <name>Gazebo/White</name>
             <uri>__default__</uri>
           </script>
         </material>
@@ -828,7 +828,7 @@
     <!-- gimbal: cgo3 -->
     <include>
       <uri>model://cgo3</uri>
-      <pose>0 0 -0.20 0 0 0</pose>
+      <pose>0 0 -0.30 0 0 0</pose>
     </include>
     <!-- 使用显式的模型::链接名称，将云台挂到 plane 模型的 base_link 上 -->
     <joint name="cgo3_joint" type="revolute">
