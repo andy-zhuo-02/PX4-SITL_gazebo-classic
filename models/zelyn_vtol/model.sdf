@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="zelyn_vtol">
+    <!-- 若是固定场景物体：true；若要参与动力学：false -->
+    <static>false</static>
+
+    <link name="link">
+      <!-- 位姿：x y z roll pitch yaw（单位：m, rad） -->
+      <pose>0 0 3.0 0 0 0</pose>
+
+      <!-- 质量与惯量：需要你按真实材料/几何填写（下面是占位） -->
+      <inertial>
+        <mass>50.0</mass>
+        <inertia>
+          <ixx>308</ixx>
+          <iyy>308</iyy>
+          <izz>408</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <!-- 可视化（建议 DAE） -->
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://zelyn_vtol/meshes/zelyn_vtol_visual_v2.dae</uri>
+            <scale>2.5 2.5 2.5</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+      <collision name="collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <!-- size: x y z，单位 m。正方体就三者相等 -->
+            <size>3.5 3.5 2.5</size>
+          </box>
+        </geometry>
+      </collision>
+
+    </link>
+  </model>
+</sdf>
