@@ -830,17 +830,10 @@
       <uri>model://cgo3</uri>
       <pose>0 0 -0.30 0 0 0</pose>
     </include>
-    <!-- 使用显式的模型::链接名称，将云台挂到 plane 模型的 base_link 上 -->
-    <joint name="cgo3_joint" type="revolute">
-      <child>cgo3::cgo3_vertical_arm_link</child>
+    <!-- 固定连接：将飞机 base_link 与云台基座 base_link 刚性相连，避免外层关节锁死内层 yaw/roll -->
+    <joint name="cgo3_joint" type="fixed">
+      <child>cgo3::base_link</child>
       <parent>base_link</parent>
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <upper>0</upper>
-          <lower>0</lower>
-        </limit>
-      </axis>
     </joint>
 
 

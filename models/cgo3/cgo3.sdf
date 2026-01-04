@@ -2,6 +2,20 @@
 <sdf version='1.5'>
   <model name='cgo3'>
     <pose>0 0 0 0 0 0</pose>
+  <!-- 新增基座link，避免yaw关节引用不存在的base_link -->
+  <link name="base_link">
+    <inertial>
+      <mass>0.01</mass>
+      <inertia>
+        <ixx>1e-4</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>1e-4</iyy>
+        <iyz>0</iyz>
+        <izz>1e-4</izz>
+      </inertia>
+    </inertial>
+  </link>
     <link name="cgo3_vertical_arm_link">
       <inertial>
         <!-- place holder -->
@@ -197,7 +211,7 @@
           </image>
           <clip>
             <near>0.1</near>
-            <far>300</far>
+            <far>600</far>
           </clip>
         </camera>
           <plugin name="monocular_camera_controller" filename="libgazebo_ros_camera.so">
@@ -233,7 +247,7 @@
           </image>
           <clip>
             <near>0.1</near>
-            <far>100</far>
+            <far>600</far>
           </clip>
           <noise>
             <type>gaussian</type>
@@ -296,8 +310,10 @@
 
     <plugin name="gimbal_controller" filename="libgazebo_gimbal_controller.so">
       <!-- 可选参数，用于在代码中动态读取 -->
+      <base_link>base_link</base_link>
       <yaw_joint>cgo3_vertical_arm_joint</yaw_joint>
       <pitch_joint>cgo3_camera_joint</pitch_joint>
+      <roll_joint>cgo3_horizontal_arm_joint</roll_joint>
     </plugin>
   </model>
 </sdf>
