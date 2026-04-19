@@ -309,7 +309,8 @@
 
 
     <plugin name="gimbal_controller" filename="libgazebo_gimbal_controller.so">
-      <!-- 可选参数，用于在代码中动态读取 -->
+      <!-- track_target_mode: absolute（默认）= 世界系绝对点；relative_base = base_link 系下偏移(米) -->
+      <!-- <track_target_mode>absolute</track_target_mode> -->
       <base_link>base_link</base_link>
       <yaw_joint>cgo3_vertical_arm_joint</yaw_joint>
       <pitch_joint>cgo3_camera_joint</pitch_joint>
